@@ -24,3 +24,4 @@ Route::get('cnbc', [PortalController::class, 'cnbc']);
 Route::get('cnn', [PortalController::class, 'cnn']);
 Route::get('kompas', [PortalController::class, 'kompas']);
 Route::get('tirto', [PortalController::class, 'tirto']);
+Route::get('republika', [PortalController::class, 'republika']);

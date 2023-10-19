@@ -7,6 +7,7 @@ use App\Services\AntaraService;
 use App\Services\CNBCService;
 use App\Services\CNNService;
 use App\Services\KompasService;
+use App\Services\RepublikaService;
 use App\Services\TirtoService;
 use Illuminate\Http\Request;
 
@@ -54,6 +55,14 @@ class PortalController extends Controller
     $page = $request->query('page');
     $limit = $request->query('limit');
     $result = $service->search($keyword, $page, $limit);
+
+    return response()->json($result, 200);
+  }
+
+  public function republika(RepublikaService $service, Request $request)
+  {
+    $keyword = $request->query('keyword');
+    $result = $service->search($keyword);
 
     return response()->json($result, 200);
   }
