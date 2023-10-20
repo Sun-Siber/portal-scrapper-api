@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Services\AntaraService;
 use App\Services\CNBCService;
 use App\Services\CNNService;
+use App\Services\IDNTimesService;
 use App\Services\KompasService;
 use App\Services\RepublikaService;
 use App\Services\TirtoService;
 use Illuminate\Http\Request;
+use App\Services\OkezoneService;
 
 class PortalController extends Controller
 {
@@ -60,6 +62,22 @@ class PortalController extends Controller
   }
 
   public function republika(RepublikaService $service, Request $request)
+  {
+    $keyword = $request->query('keyword');
+    $result = $service->search($keyword);
+
+    return response()->json($result, 200);
+  }
+
+  public function okezone(OkezoneService $service, Request $request)
+  {
+    $keyword = $request->query('keyword');
+    $result = $service->search($keyword);
+
+    return response()->json($result, 200);
+  }
+
+  public function idnTimes(IDNTimesService $service, Request $request)
   {
     $keyword = $request->query('keyword');
     $result = $service->search($keyword);

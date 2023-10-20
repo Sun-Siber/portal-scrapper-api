@@ -4,8 +4,73 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa322c53454393ed775cfe4807d54a50",
+    "content-hash": "bc420ad28b43c8310dd8b4570a2da576",
     "packages": [
+        {
+            "name": "bayareawebpro/laravel-dom-pipeline",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bayareawebpro/laravel-dom-pipeline.git",
+                "reference": "8a7244a0ad40d315d7c96a544b20d81b02da5026"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bayareawebpro/laravel-dom-pipeline/zipball/8a7244a0ad40d315d7c96a544b20d81b02da5026",
+                "reference": "8a7244a0ad40d315d7c96a544b20d81b02da5026",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "illuminate/pipeline": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "nunomaduro/larastan": "^0.6|^1.0|^2.0",
+                "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BayAreaWebPro\\DomPipeline\\DomPipelineServiceProvider"
+                    ],
+                    "aliases": {
+                        "DomPipeline": "DomPipeline"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BayAreaWebPro\\DomPipeline\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dan Alvidrez",
+                    "email": "dan.bayareawebpro@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A DOM Pipeline Utility for Modifying HTML",
+            "homepage": "https://github.com/bayareawebpro/laravel-dom-pipeline",
+            "keywords": [
+                "bayareawebpro",
+                "laravel-dom-pipeline"
+            ],
+            "support": {
+                "issues": "https://github.com/bayareawebpro/laravel-dom-pipeline/issues",
+                "source": "https://github.com/bayareawebpro/laravel-dom-pipeline/tree/v1.0.7"
+            },
+            "time": "2023-03-27T22:52:53+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
