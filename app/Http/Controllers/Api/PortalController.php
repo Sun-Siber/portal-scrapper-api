@@ -12,6 +12,7 @@ use App\Services\RepublikaService;
 use App\Services\TirtoService;
 use Illuminate\Http\Request;
 use App\Services\OkezoneService;
+use App\Services\VivanewsService;
 
 class PortalController extends Controller
 {
@@ -81,6 +82,16 @@ class PortalController extends Controller
   {
     $keyword = $request->query('keyword');
     $result = $service->search($keyword);
+
+    return response()->json($result, 200);
+  }
+
+  public function vivanews(VivanewsService $service, Request $request)
+  {
+    $keyword = $request->query('keyword');
+    $page = $request->query('page');
+    $limit = $request->query('limit');
+    $result = $service->search($keyword, $page, $limit);
 
     return response()->json($result, 200);
   }
