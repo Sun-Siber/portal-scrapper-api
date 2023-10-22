@@ -22,11 +22,26 @@ class OkezoneService {
     $document->loadHTML($html);
     $xpath = new DOMXPath($document);
     $links = $xpath->evaluate('//div[@class="title"]/a');
+    $results = [];
 
     foreach ($links as $link) {
       $url = $link->getAttribute('href');
+      $segment = explode('/', $url);
+      $id = $segment[4]. '/' . $segment[5]. '/' . $segment[6]. '/' . $segment[7]. '/' . $segment[8]. '/' . $segment[9];
 
-      dd($url);
+      $articles = $this->getArticle($id);
+      $results[] = $articles;
     }
+
+    return $results;
+  }
+
+  public function getArticle($id) {
+    $response = $this->client->request('GET', "services.okezone.com/android/apps_detail_v2/{$id}");
+    $body = json_decode($response->getBody());
+
+    return $body[0];
+
+    // return $body->article;
   }
 }
