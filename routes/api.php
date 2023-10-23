@@ -29,6 +29,7 @@ Route::get('republika', [PortalController::class, 'republika']);
 Route::get('okezone', [PortalController::class, 'okezone']);
 Route::get('idn-times', [PortalController::class, 'idnTimes']);
 Route::get('vivanews', [PortalController::class, 'vivanews']);
+Route::get('tempo', [PortalController::class, 'tempo']);
 
 Route::get('test', function (Client $client) {
   // $response = $client->get('https://books.toscrape.com/');
